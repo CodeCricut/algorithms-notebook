@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tags-index-js",
+    "path": "/tags/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Algorithms Notebook","lang":"en"}},"allMarkdownRemark":{"group":[{"fieldValue":"graph","totalCount":1},{"fieldValue":"graph-search","totalCount":1}]}},"pageContext":{"langKey":"en"}},
+    "staticQueryHashes": ["3257411868"]}

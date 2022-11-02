@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-index-js",
+    "path": "/1",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Algorithms Notebook"}},"allMarkdownRemark":{"nodes":[{"excerpt":"Graph Search :)","fields":{"slug":"/algorithms/depth-first-search/","langKey":"en","readingTime":{"minutes":0.075}},"frontmatter":{"date":"November 02, 2022","title":"Depth First Search","description":"A simple graph search algorithm guaranteed to find a path if it exists.","tags":["graph-search","graph"]}}]}},"pageContext":{"from":1,"to":1,"currentPage":1,"numPages":1,"limit":10,"skip":0,"langKey":"en","baseUrl":"/"}},
+    "staticQueryHashes": ["2841359383","3257411868"]}
