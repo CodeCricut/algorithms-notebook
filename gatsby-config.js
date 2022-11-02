@@ -1,8 +1,6 @@
-const { toPairs } = require('ramda');
-const {
-  lang = 'en',
-} = require('./config').site;
-const supportedLanguages = require('./config').supportedLanguages;
+const { toPairs } = require("ramda")
+const { lang = "en" } = require("./config").site
+const supportedLanguages = require("./config").supportedLanguages
 
 const createRSSItem = (site, edge) => {
   return Object.assign({}, edge.node.frontmatter, {
@@ -17,16 +15,14 @@ const createRSSItem = (site, edge) => {
 module.exports = {
   pathPrefix: `/gatsby-minimal-simple-blog`,
   siteMetadata: {
-    title: `gatsby-minimal-simple-blog`,
+    title: `Algorithms Notebook`,
     author: {
-      name: `An Tran`,
-      summary: `#Swift #Mobile #MachineLearning #Minimalist`,
+      name: `AJ Richerson`,
+      summary: `A notebook for various algorithms, datastructures, etc.`,
     },
-    description: `A minimally simple starter package to build a static blogging site`,
-    siteUrl: `https://antranapp.github.io/gatsby-minimal-simple-blog/`,
-    social: {
-      twitter: `AnTranApp`,
-    },
+    description: `Topics covered include graph search, dynamic programming, greedy method, and divide-and-conquer algorithms.`,
+    siteUrl: `https://google.com`,
+    social: {},
     lang,
     langsEntries: toPairs(supportedLanguages),
   },
@@ -66,8 +62,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
-              className: `autolink-heading`
-            }
+              className: `autolink-heading`,
+            },
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
@@ -119,7 +115,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "RSS Feed"
+            title: "RSS Feed",
           },
         ],
       },
@@ -127,8 +123,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Minimal Blog`,
-        short_name: `Blog`,
+        name: `Algorithms Notebook`,
+        short_name: `Algorithms Notebook`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
@@ -148,8 +144,8 @@ module.exports = {
     {
       resolve: `gatsby-remark-responsive-iframe`,
       options: {
-        wrapperStyle: `margin-bottom: 1.0725rem`
-      }
+        wrapperStyle: `margin-bottom: 1.0725rem`,
+      },
     },
     `gatsby-plugin-draft`, // local plugins
     `gatsby-plugin-sitemap`,

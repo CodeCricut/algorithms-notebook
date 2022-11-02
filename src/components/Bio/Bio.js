@@ -36,7 +36,7 @@ const Bio = () => {
         className="bio-avatar"
         layout="fixed"
         formats={["AUTO", "WEBP", "AVIF"]}
-        src="../../images/profile-pic.jpeg"
+        src="../../images/profile-pic.png"
         width={80}
         height={80}
         quality={95}
@@ -44,7 +44,7 @@ const Bio = () => {
       />
       {author?.name && (
         <p>
-          Personal blog by  {` `}
+          Personal blog by {` `}
           <a href={`https://twitter.com/${social?.twitter || ``}`}>
             {author.name}
           </a>

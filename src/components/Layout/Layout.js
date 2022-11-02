@@ -1,20 +1,20 @@
 import * as React from "react"
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types"
 
 import { Link } from "gatsby"
 
-import { useLang } from 'context/LanguageContext';
-import ReadModeToggle from './ReadModeToggle';
+import { useLang } from "context/LanguageContext"
+import ReadModeToggle from "./ReadModeToggle"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
 
-  const { refresh } = useLang();
+  const { refresh } = useLang()
 
   React.useEffect(() => {
-    refresh(location);
-  }, [location, refresh]);
+    refresh(location)
+  }, [location, refresh])
 
   let header
   if (isRootPath) {
@@ -38,9 +38,7 @@ const Layout = ({ location, title, children }) => {
         <ReadModeToggle />
       </header>
       <main>{children}</main>
-      <footer>
-        © An Tran - {new Date().getFullYear()} 
-      </footer>
+      <footer>AJ Richerson - 2022</footer>
     </div>
   )
 }
@@ -49,11 +47,11 @@ Layout.propTypes = {
   children: PropTypes.any,
   location: PropTypes.object.isRequired,
   title: PropTypes.string,
-};
+}
 
 Layout.defaultProps = {
   children: null,
   title: null,
-};
+}
 
-export default Layout;
+export default Layout
