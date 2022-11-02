@@ -13,7 +13,7 @@ const createRSSItem = (site, edge) => {
 }
 
 module.exports = {
-  pathPrefix: `/gatsby-minimal-simple-blog`,
+  pathPrefix: `/algorithms-notebook`,
   siteMetadata: {
     title: `Algorithms Notebook`,
     author: {
