@@ -1,6 +1,6 @@
 ---
-title: Dijkstra's Algorithm (and Best First)
-date: 2022-11-02
+title: Dijkstras Algorithm
+date: 2022-11-03
 description: A variation on BFS guaranteed to find the path with the least edge weight.
 category: graph-search
 tags: ["graph-search", "graph"]
