@@ -45,7 +45,7 @@ This can be considered a dynamic programming problem because it breaks the probl
 First, we consider the base case: when `start === destination`, it's fair to say the only vertex in the path is `destination`:
 
 ```js
-function bfs(graph, start, destination) {
+function dfs(graph, start, destination) {
   if (start === destination) return [destination]
 
   // ...
@@ -56,11 +56,11 @@ function bfs(graph, start, destination) {
 Otherwise, we need to break the problem into a slightly simpler problem: finding the path for the incidences of the start node:
 
 ```js
-function bfs(graph, start, destination = {}) {
+function dfs(graph, start, destination = {}) {
   if (start === destination) return [destination]
 
   for (const incidence of graph.getIncidences(start)) {
-    const postfix = bfs(graph, incidence.destination, destination)
+    const postfix = dfs(graph, incidence.destination, destination)
     // ...
   }
 
@@ -69,16 +69,16 @@ function bfs(graph, start, destination = {}) {
 }
 ```
 
-Let's suppose that bfs returns a path for the subproblem. In that case, we want to return that path appended to the current `start` to give the complete path. In another case, if `postfix`
+Let's suppose that dfs returns a path for the subproblem. In that case, we want to return that path appended to the current `start` to give the complete path. In another case, if `postfix`
 is undefined (meaning no path could be found for that incidence), we want to consider all other incidences. If we consider all incidences and _still_ can't find a path, then it's fair to return
 `null`:
 
 ```js
-function bfs(graph, start, destination) {
+function dfs(graph, start, destination) {
   if (start === destination) return [destination]
 
   for (const incidence of graph.getIncidences(start)) {
-    const postfix = bfs(graph, incidence.destination, destination)
+    const postfix = dfs(graph, incidence.destination, destination)
     if (postfix !== null) return [start, ...postfix]
   }
 
@@ -91,7 +91,7 @@ function bfs(graph, start, destination) {
 But we are forgetting a critical thing: what if the graph is cylical? In that case, we need to ensure we don't search vertices we've already visited.
 
 ```js
-function bfs(graph, start, destination, visited = []) {
+function dfs(graph, start, destination, visited = []) {
   // don't try to find the path if we've already searched this vertex
   if (visited.has(start)) return null
   visited.add(start)
@@ -99,7 +99,7 @@ function bfs(graph, start, destination, visited = []) {
   if (start === destination) return [destination]
 
   for (const incidence of graph.getIncidences(start)) {
-    const postfix = bfs(graph, incidence.destination, destination)
+    const postfix = dfs(graph, incidence.destination, destination)
     if (postfix !== null) return [start, ...postfix]
   }
 

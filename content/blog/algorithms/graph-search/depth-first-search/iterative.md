@@ -38,12 +38,12 @@ tags: ["graph-search", "graph"]
 
 ## Algorithm
 
-It's important that you understand how to write the search algorithm, as it will serve as the basis for many other search algorithms such as BFS, Dijkstra's, etc.
+It's important that you understand how to write the search algorithm, as it will serve as the basis for many other search algorithms such as dfs, Dijkstra's, etc.
 
 Signature
 
 ```js
-function bfs(graph, start, destination) {
+function dfs(graph, start, destination) {
   return []
 }
 ```
@@ -51,7 +51,7 @@ function bfs(graph, start, destination) {
 Obviously, we must start with our worklist and backpointers:
 
 ```js
-function bfs(graph, start, destination) {
+function dfs(graph, start, destination) {
   const worklist = []
   const backpointers = {}
 
@@ -62,7 +62,7 @@ function bfs(graph, start, destination) {
 If we follow the same process as the trace, the next logical step is to iterate through the worklist, adding more items to the stack when the current item has incidences:
 
 ```js
-function bfs(graph, start, destination) {
+function dfs(graph, start, destination) {
   const worklist = []
   const backpointers = {}
 
@@ -90,7 +90,7 @@ Now we can begin thinking about our return statement. There are two situations w
 In the second case, we need to maintain the path using `backpointers`. Then, we return early and use `backpointers` to resolve the path:
 
 ```js
-function bfs(graph, start, destination) {
+function dfs(graph, start, destination) {
   const worklist = []
   const backpointers = {}
 
@@ -133,7 +133,7 @@ This is almost correct, but we need to consider cyclical graphs. If the current 
 The final algorithm looks like this:
 
 ```js
-function bfs(graph, start, destination) {
+function dfs(graph, start, destination) {
   const worklist = []
   const backpointers = {}
 
